@@ -1,5 +1,5 @@
 # What It Does #
-This is a interactive site written with a python backend with Flask that communicates to a PostgreSQL database via psychopg2 to carry out SQL statements. The database itself is for a book wholesaler and contains the expected data for such a system, details on books, publishers and staff. PostgreSQL Data definitions and test data have been provided in this repository.
+This is a interactive site written with a python backend with Flask that communicates to a PostgreSQL database via psychopg2 to carry out SQL statements. The database itself is for a book wholesaler and contains the expected data for such a system, details on books, publishers and staff. PostgreSQL Data definitions and test data have been provided in this repository. Testing information can be found [here](https://github.com/TJEEPOT/book-database-system/wiki).
 
 # What I Learned #
 * Intermediate to advanced SQL (subqueries, indexes, constraints, triggers, functions, views etc)
@@ -12,4 +12,4 @@ For the database, start up a new PostgreSQL database instance and note the host,
 
 To run, ensure Python 3, Flask and psychopg2 are installed on your machine of choice and navigate to the root of the project in your console. Use 'python ownSite.py' to start the server in development mode. Navigate to http://127.0.0.1:5000 in your browser to see the site in action. 
 
-Sadly, this project is not currently being maintained on a live system, but you are able to compile and run a local copy with the instructions above. 
+Sadly, this project is not currently being maintained on a live system, but you are able to compile and run a local copy with the instructions above.
