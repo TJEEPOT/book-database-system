@@ -8,7 +8,7 @@ This is a interactive site written with a python backend with Flask that communi
 * Refreshed my knowledge of basic SQL and  working with Flask, Python, HTML5 and CSS3 to create a modern website.
 
 # Usage Notes #
-For the database, start up a new PostgreSQL database instance and note the host, database name, username and password. Load wholesaler_ddl.sql as a schema. Edit ownSite.py on line 13 to reference your previously built Postgres database.
+For the database, start up a new PostgreSQL database instance and note the host, database name, username and password. Load wholesaler_ddl.sql as a schema. Edit config.ini to reference your previously built Postgres database.
 
 To run, ensure Python 3, Flask and psychopg2 are installed on your machine of choice and navigate to the root of the project in your console. Use 'python ownSite.py' to start the server in development mode. Navigate to http://127.0.0.1:5000 in your browser to see the site in action. 
 

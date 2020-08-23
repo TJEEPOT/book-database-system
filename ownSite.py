@@ -1,17 +1,20 @@
 from flask import Flask, render_template, request
 import os
 import psycopg2, psycopg2.extras
+from configparser import SafeConfigParser
 
 app = Flask(__name__)
 
 def getConn():
-    #function to retrieve the password, construct
-    #the connection string, make a connection and return it.
-    pwFile = open("pw.txt", "r")
-    pw = pwFile.read()
-    pwFile.close()
-    connStr = "host='host' dbname='db' user='user' password = " + pw
-    conn=psycopg2.connect(connStr)          
+    # Function to retrieve the db connection config settings, make a connection 
+    # and return it.
+    db = SafeConfigParser()
+    db.read('config.ini')
+    conn = psycopg2.connect(
+        host     = db.get('Database', 'Host'),
+        dbname   = db.get('Database', 'DbName'),
+        user     = db.get('Database', 'Username'),
+        password = db.get('Database', 'Password'))
     return  conn
 
 @app.route('/') # Homepage route.
