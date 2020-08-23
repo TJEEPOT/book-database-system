@@ -4,8 +4,8 @@ This is a interactive site written with a python backend with Flask that communi
 # What I Learned #
 * Intermediate to advanced SQL (subqueries, indexes, constraints, triggers, functions, views etc)
 * Connecting a Python backend to a database to send and retrieve data with SQL statements
-* Working with PostgreSQL schemas via pgAdmin 3.
-* Refreshed my knowledge of basic SQL and  working with Flask, Python, HTML5 and CSS3 to create a modern website.
+* Working with PostgreSQL schemas via pgAdmin 3
+* Refreshed my knowledge of basic SQL and  working with Flask, Python, HTML5 and CSS3 to create a modern web interface
 
 # Usage Notes #
 For the database, start up a new PostgreSQL database instance and note the host, database name, username and password. Load wholesaler_ddl.sql as a schema. Edit config.ini to reference your previously built Postgres database.
