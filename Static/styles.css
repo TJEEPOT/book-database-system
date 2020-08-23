@@ -1,0 +1,54 @@
+body{
+	background-color: #222;
+    color: #888;	
+}
+
+
+/* Input form stuff */
+form{
+	display: table; 
+	width: 250px;
+	margin-left: 10px;
+	border: 2px solid #888;
+	padding: 5px;
+	font-size: 18px;
+}
+
+input{
+	display: table-cell;
+	width: 95%;
+	padding: 3px;
+	margin: 5px;
+	background: #446;
+	color: #fff;
+	font-size: 16px;
+} 
+
+.selection, .selection input{
+	margin-left: 5px;
+	width: 50px;
+	cursor: pointer;
+	background: #446;
+}
+
+
+/* Table rendering stuff */
+table{
+	border: 2px solid #888;
+}
+
+th{ /* settings for the header line */
+	background-color: #446;
+	color: #FFF;
+	font-weight: bold;
+	padding: 4px;
+}
+
+tr:nth-child(even){ /* Settings for every other line */
+	background-color: #888;
+	color: #222
+}
+
+td{
+    padding: 3px 8px 3px 8px;
+}

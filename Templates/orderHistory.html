@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Order History Report{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block body %}
+    <h1>Wholesale Books Database Client</h1>
+
+    <h3>Statement 5 - Order History Report for book ID {{bookID}}:</h3>
+    <table> 
+        <tr>
+            <th>Order Date</th> <th>Order Title</th> <th>Retail Price</th> 
+            <th>Unit Price</th> <th>Total Quantity</th> <th>Order Value</th>
+            <th>Shop Name</th>
+        </tr>
+        {% for row in rows %}
+            <tr>
+                {% for item in row%}
+                    <td>
+                        {% if item == None %}
+                            <!-- empty cell -->
+                        {% else %}
+                            {{item}}
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+    <form action = "/" method = "GET" > 
+        <input type = "submit" value = "Home" > 
+    </form>
+{% endblock %}

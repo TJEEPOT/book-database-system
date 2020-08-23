@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block body %}
+    <h1>Wholesale Books Database Client</h1>
+
+    <h3>Statement 1 - Add a New Category:</h3>
+    <form action = "newCategory" method = "post">
+        CategoryID <input type = "number" name = "categoryID"><br>
+        Category Name <input type = "text" name = "categoryName"><br>
+        <label class = "selection">
+            <input type="radio" name="categoryType" value="fiction" checked>
+            fiction</label>
+        <br>
+        <label class = "selection">
+            <input type="radio" name="categoryType" value="Non-fiction">
+            Non-fiction</label>
+        <input class = "submit" type = "submit" value = "Add Category to Database">
+    </form>
+
+    {{msg1}}<br>
+    {{error1}}
+    <hr>
+
+    <h3>Statement 2 - Delete a Category:</h3>
+    <form action = "deleteCategory" method = "post">
+        CategoryID <input type = "number" name = "categoryID"><br>
+        <input type = "submit" value = "Delete Category from Database">
+    </form>
+
+    {{msg2}}<br>
+    {{error2}}
+    <hr>
+
+    <h3>Statement 3 - Summary Report of Books in Each Category:</h3>
+    <form action = "bookSummary" method = "get">
+        <input type = "submit" value = "Retrieve Report">
+    </form>
+
+    {{msg3}}<br>
+    {{error3}}
+    <hr>
+
+    <h3>Statement 4 - Report of Books Ordered for given Publisher:</h3>
+    <form action = "booksOrdered" method = "post">
+        Publisher Name <input type = "text" name = "publisherName"><br>
+        <input type = "submit" value = "Retrieve Report">
+    </form>
+
+    {{msg4}}<br>
+    {{error4}}
+    <hr>
+
+    <h3>Statement 5 - Order History for given Book:</h3>
+    <form action = "orderHistory" method = "post">
+        BookID <input type = "number" name = "bookID"><br>
+        <input type = "submit" value = "Retrieve Report">
+    </form>
+
+    {{msg5}}<br>
+    {{error5}}
+    <hr>
+
+    <h3>Statement 6 - Sales Rep Performance Report:</h3>
+    <form action = "salesPerformance" method = "post">
+        Start Date <input type = "date" name = "startDate" min = "1970-01-01"><br>
+        End Date <input type = "date" name = "endDate" min = "1970-01-02">
+        <input type = "submit" value = "Retrieve Report">
+    </form>
+
+    {{msg6}}<br>
+    {{error6}}
+    <hr>
+
+    <h3>Statement 7 - Apply Discount to Books in given Category:</h3>
+    <form action = "categoryDiscount" method = "post">
+        CategoryID <input type = "number" name = "categoryID"><br>
+        Discount Percentage <input type = "number" name = "discount" max = 100 min = 0 step = any><br>
+        <input type = "submit" value = "Apply Discount">
+    </form>
+
+    {{msg7}}<br>
+    {{error7}}
+    <hr>
+{% endblock %}

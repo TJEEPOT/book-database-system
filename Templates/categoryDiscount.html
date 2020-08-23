@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Applied Discount Report{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block body %}
+    <h1>Wholesale Books Database Client</h1>
+
+    <h3>Statement 7 - Apply {{discount}}% Discount to Books in Category {{categoryID}}</h3>
+    <p>The discount above has been applied to the following books:</p>
+    <table> 
+        <tr>
+            <th>BookID</th> <th>Title</th> <th>New Price</th> 
+        </tr>
+        {% for row in rows %}
+            <tr>
+                {% for item in row%}
+                    <td>
+                        {% if item == None %}
+                            <!-- empty cell -->
+                        {% else %}
+                            {{item}}
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+    <form action = "/" method = "GET" > 
+        <input type = "submit" value = "Home" > 
+    </form>
+{% endblock %}

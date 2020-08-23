@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Book Summary Report{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block body %}
+    <h1>Wholesale Books Database Client</h1>
+
+    <h3>Statement 3: Book Summary Report</h3>
+    <table> 
+        <tr>
+            <th>Category Name</th> <th>Number of Titles</th> <th>Category Average Price</th> 
+        </tr>
+        {% for row in rows %}
+            <tr>
+                {% for item in row%}
+                    <td>
+                        {% if item == None %}
+                            <!-- empty cell -->
+                        {% else %}
+                            {{item}}
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+    <form action = "/" method = "GET" > 
+        <input type = "submit" value = "Home" > 
+    </form>
+{% endblock %}
